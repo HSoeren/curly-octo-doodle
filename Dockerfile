@@ -12,7 +12,3 @@ COPY ./scripts /scripts
 
 LABEL org.label-schema.build-date=$BUILD_DATE \
     org.label-schema.version=$VERSION \
-    org.label-schema.url="https://github.com/HSoeren/curly-octo-doodle"
-    org.label-schema.name="COD Test"
-    org.label-schema.description="Testing Image for nginx + php8 fpm"
-    org.php.version="8.0 FPM"

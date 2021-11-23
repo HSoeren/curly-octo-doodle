@@ -1,15 +1,11 @@
-FROM bitnami/php-fpm:latest
-MAINTAINER Soeren Helms <soeren.helms@repronik.it>
+FROM php:7.3-rc-apache
 
-COPY ./src/ /app
+## installing php extensions for databases
+RUN docker-php-ext-install mysqli pdo pdo_mysql && docker-php-ext-enable pdo_mysql mysqli pdo
 
-ENV PHP_MEMORY_LIMIT=512M
-ENV PHP_MAX_EXECUTION_TIME=300
-ENV PHP_POST_MAX_SIZE=50M
-ENV PHP_UPLOAD_MAX_FILESIZE=50M
+COPY src/ /var/www/html
 
-EXPOSE 80/tcp
-
+LABEL maintainer="Soeren Helms <soeren.helms@repronik.it>"
 LABEL org.opencontainers.image.source = "https://github.com/HSoeren/curly-octo-doodle"
 LABEL org.cod.build-date=$BUILD_DATE
 LABEL org.cod.version=$VERSION

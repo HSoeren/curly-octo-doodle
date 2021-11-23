@@ -10,6 +10,7 @@ ENV PHP_UPLOAD_MAX_FILESIZE=50M
 
 EXPOSE 80/tcp
 
+LABEL org.opencontainers.image.source = "https://github.com/HSoeren/curly-octo-doodle"
 LABEL org.cod.build-date=$BUILD_DATE
 LABEL org.cod.version=$VERSION
 LABEL version="1.0"

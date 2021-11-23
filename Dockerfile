@@ -1,4 +1,4 @@
-FROM php:7.3-rc-apache
+FROM php:8.0.13-apache-buster
 
 ## installing php extensions for databases
 RUN docker-php-ext-install mysqli pdo pdo_mysql && docker-php-ext-enable pdo_mysql mysqli pdo
